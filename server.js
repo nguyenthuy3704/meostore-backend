@@ -5,8 +5,7 @@ import bodyParser from "body-parser";
 import cors from "cors";
 
 // ✅ Đọc credentials từ file
-const credentials = JSON.parse(fs.readFileSync("./credentials.json", "utf-8"));
-
+const credentials = JSON.parse(process.env.CREDENTIALS_JSON);
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
